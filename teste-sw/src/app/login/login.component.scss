@@ -1,0 +1,199 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: 
+      linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+      url('https://swfast.com.br/wp-content/uploads/2022/06/Ativo-2.png') no-repeat center center;
+    background-size: cover;
+    padding: 2rem;
+    
+    /* Efeito de desfoque opcional no background */
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      backdrop-filter: blur(2px);
+      z-index: -1;
+    }
+  }
+  
+  .login-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .login-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    transition: all 0.3s ease;
+  }
+  
+  .login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  
+    h2 {
+      color: #2d3748;
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+  
+    p {
+      color: #718096;
+      font-size: 0.875rem;
+    }
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  
+    label {
+      color: #4a5568;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+  
+    input {
+      padding: 0.75rem 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+  
+      &:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+      }
+  
+      &.invalid {
+        border-color: #fc8181;
+      }
+    }
+  }
+  
+  .error-message {
+    color: #e53e3e;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+  }
+  
+  .global-error {
+    background: #fff5f5;
+    color: #e53e3e;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+  
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+  
+    .remember-me {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+  
+      input {
+        accent-color: #667eea;
+      }
+    }
+  
+    .forgot-password {
+      color: #667eea;
+      text-decoration: none;
+      transition: color 0.2s ease;
+  
+      &:hover {
+        color: #5a67d8;
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .login-button {
+    background: #667eea;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    height: 44px;
+  
+    &:hover {
+      background: #5a67d8;
+    }
+  
+    &:disabled {
+      background: #c3dafe;
+      cursor: not-allowed;
+    }
+  }
+  
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .login-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: #718096;
+  
+    a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }

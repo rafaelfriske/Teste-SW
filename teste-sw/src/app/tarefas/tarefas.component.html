@@ -1,0 +1,154 @@
+<div class="container">
+    <h1 class="text-center my-4">Gerenciador de Tarefas</h1>
+    
+    <div class="columns-container">
+        <!-- Coluna 1: Formulário -->
+        <div class="column">
+            <!-- Formulário para adicionar nova tarefa -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h2>Adicionar Nova Tarefa</h2>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="taskForm" (ngSubmit)="adicionarTarefa()">
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">Título*</label>
+                            <input type="text" class="form-control" id="titulo" 
+                                   formControlName="title" required>
+                            @if (taskForm.get('title')?.invalid && (taskForm.get('title')?.dirty || taskForm.get('title')?.touched)) {
+                                <div class="text-danger mt-1">
+                                    Título é obrigatório
+                                </div>
+                            }
+                        </div>
+                        <div class="mb-3">
+                            <label for="descricao" class="form-label">Descrição</label>
+                            <textarea class="form-control" id="descricao" rows="3"
+                                      formControlName="description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dataConclusao" class="form-label">Data de Conclusão Prevista</label>
+                            <input type="date" class="form-control" id="dataConclusao" 
+                                   formControlName="dueDate" required>
+                            @if (taskForm.get('dueDate')?.invalid && (taskForm.get('dueDate')?.dirty || taskForm.get('dueDate')?.touched)) {
+                                <div class="text-danger mt-1">
+                                    Data de conclusão é obrigatória
+                                </div>
+                            }
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary px-4 shadow" [disabled]="taskForm.invalid">
+                                <i class="bi bi-plus-lg"></i> Adicionar Tarefa
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Tarefas Concluídas e Pendentes -->
+        <div class="column">
+            <!-- Tarefas Concluídas -->
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h2>Tarefas Concluídas</h2>
+                    <button class="btn btn-sm btn-outline-primary" (click)="carregarTarefas()">
+                        <i class="bi bi-arrow-clockwise"></i> Atualizar
+                    </button>
+                </div>
+                <div class="card-body">
+                    @if (tarefas && getTarefasPorStatus(2).length > 0) {
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Título</th>
+                                        <th>Descrição</th>
+                                        <th>Conclusão</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (tarefa of getTarefasPorStatus(2); track tarefa.idTarefa) {
+                                    <tr>
+                                        <td>{{ tarefa.titulo }}</td>
+                                        <td>{{ tarefa.descricao }}</td>
+                                        <td>{{ tarefa.dataConclusao | date:'dd/MM/yyyy' }}</td>
+                                        <td>
+                                            <div class="btn-group" role="group">    
+                                                <button class="btn btn-sm btn-outline-success" 
+                                                (click)="editarTarefa(tarefa)">
+                                                    <i class="bi bi-check-circle"></i> Editar
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger" 
+                                                        (click)="removerTarefa(tarefa.idTarefa)">
+                                                    <i class="bi bi-trash"></i> Remover
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    } @else {
+                        <div class="alert alert-info">
+                            Nenhuma tarefa concluída.
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Tarefas Pendentes -->
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h2>Tarefas Pendentes</h2>
+                    <button class="btn btn-sm btn-outline-primary" (click)="carregarTarefas()">
+                        <i class="bi bi-arrow-clockwise"></i> Atualizar
+                    </button>
+                </div>
+                <div class="card-body">
+                    @if (tarefas && getTarefasPorStatus(1).length > 0) {
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Título</th>
+                                        <th>Descrição</th>
+                                        <th>Data Prevista</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (tarefa of getTarefasPorStatus(1); track tarefa.idTarefa) {
+                                    <tr>
+                                        <td>{{ tarefa.titulo }}</td>
+                                        <td>{{ tarefa.descricao }}</td>
+                                        <td>{{ tarefa.dataCriacao | date:'dd/MM/yyyy' }}</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <button class="btn btn-sm btn-outline-success" 
+                                                        (click)="editarTarefa(tarefa)">
+                                                    <i class="bi bi-check-circle"></i> Editar
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger" 
+                                                        (click)="removerTarefa(tarefa.idTarefa)">
+                                                    <i class="bi bi-trash"></i> Remover
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    } @else {
+                        <div class="alert alert-info">
+                            Nenhuma tarefa pendente.
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
