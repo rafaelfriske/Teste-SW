@@ -1,70 +1,178 @@
-<div class="container">
-    <h1 class="text-center my-4">Gerenciador de Tarefas</h1>
-    
-    <div class="columns-container">
-        <!-- Coluna 1: Formulário -->
-        <div class="column">
-            <!-- Formulário para adicionar nova tarefa -->
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h2>Adicionar Nova Tarefa</h2>
-                </div>
-                <div class="card-body">
-                    <form [formGroup]="taskForm" (ngSubmit)="adicionarTarefa()">
-                        <div class="mb-3">
-                            <label for="titulo" class="form-label">Título*</label>
-                            <input type="text" class="form-control" id="titulo" 
-                                   formControlName="title" required>
-                            @if (taskForm.get('title')?.invalid && (taskForm.get('title')?.dirty || taskForm.get('title')?.touched)) {
-                                <div class="text-danger mt-1">
-                                    Título é obrigatório
-                                </div>
-                            }
-                        </div>
-                        <div class="mb-3">
-                            <label for="descricao" class="form-label">Descrição</label>
-                            <textarea class="form-control" id="descricao" rows="3"
-                                      formControlName="description"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dataConclusao" class="form-label">Data de Conclusão Prevista</label>
-                            <input type="date" class="form-control" id="dataConclusao" 
-                                   formControlName="dueDate" required>
-                            @if (taskForm.get('dueDate')?.invalid && (taskForm.get('dueDate')?.dirty || taskForm.get('dueDate')?.touched)) {
-                                <div class="text-danger mt-1">
-                                    Data de conclusão é obrigatória
-                                </div>
-                            }
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary px-4 shadow" [disabled]="taskForm.invalid">
-                                <i class="bi bi-plus-lg"></i> Adicionar Tarefa
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<!-- Container Principal -->
+<div class="container-fluid">
+    <!-- Cabeçalho - Título à esquerda e botão à direita -->
+    <header class="d-flex justify-content-between align-items-center my-4 w-100">
+        <h1 class="m-0 flex-grow-1">Gerenciador de Tarefas</h1>
+        <button class="btn-sair ms-auto" (click)="logout()">
+            <i class="bi bi-box-arrow-right"></i> Sair
+        </button>
+    </header>
+</div>
 
-        <!-- Coluna 2: Tarefas Concluídas e Pendentes -->
-        <div class="column">
-            <!-- Tarefas Concluídas -->
-            <div class="card mb-4">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h2>Tarefas Concluídas</h2>
-                    <button class="btn btn-sm btn-outline-primary" (click)="carregarTarefas()">
-                        <i class="bi bi-arrow-clockwise"></i> Atualizar
-                    </button>
-                </div>
-                <div class="card-body">
-                    @if (tarefas && getTarefasPorStatus(2).length > 0) {
-                        <div class="table-responsive">
+<div class="container">
+    <!-- Loading Overlay -->
+    @if (isLoading) {
+        <div class="loading-overlay">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Carregando...</span>
+          </div>
+        </div>
+    }
+    
+    <!-- Botão Sair -->
+    
+    <!-- Título Principal -->
+
+  
+    <!-- Container do Formulário de Adição -->
+    <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h2>Adicionar Nova Tarefas</h2>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="taskForm" (ngSubmit)="adicionarTarefa()" class="modern-form">
+              <!-- Campo Título -->
+              <div class="form-group floating">
+                <input 
+                  type="text" 
+                  id="titulo" 
+                  formControlName="title" 
+                  class="form-control" 
+                  placeholder=" "
+                  required
+                >
+                <label for="titulo" class="floating-label">
+                  <i class="bi bi-card-heading"></i> Título*
+                </label>
+                @if (taskForm.get('title')?.invalid && (taskForm.get('title')?.dirty || taskForm.get('title')?.touched)) {
+                  <div class="error-message">
+                    <i class="bi bi-exclamation-circle"></i> Título é obrigatório
+                  </div>
+                }
+              </div>
+          
+              <!-- Campo Descrição -->
+              <div class="form-group floating">
+                <textarea 
+                  id="descricao" 
+                  formControlName="description" 
+                  class="form-control" 
+                  placeholder=" "
+                  rows="3"
+                ></textarea>
+                <label for="descricao" class="floating-label">
+                  <i class="bi bi-text-paragraph"></i> Descrição
+                </label>
+              </div>
+          
+              <!-- Campo Data -->
+              <div class="form-group floating">
+                <input 
+                  type="date" 
+                  id="dataConclusao" 
+                  formControlName="dueDate" 
+                  class="form-control" 
+                  placeholder=" "
+                  required
+                >
+                <label for="dataConclusao" class="floating-label">
+                  <i class="bi bi-calendar-check"></i> Data de Conclusão*
+                </label>
+                @if (taskForm.get('dueDate')?.invalid && (taskForm.get('dueDate')?.dirty || taskForm.get('dueDate')?.touched)) {
+                  <div class="error-message">
+                    <i class="bi bi-exclamation-circle"></i> Data é obrigatória
+                  </div>
+                }
+              </div>
+          
+              <!-- Botão de Submit -->
+              <div class="form-actions">
+                <button 
+                  type="submit" 
+                  class="btn-tech" 
+                  [disabled]="taskForm.invalid"
+                  [class.btn-disabled]="taskForm.invalid"
+                >
+                  <i class="bi bi-plus-circle"></i> Criar Tarefa
+                  <span class="btn-tech-hover"></span>
+                </button>
+              </div>
+            </form>
+          </div>
+    </div>
+
+    <!-- Container da Lista de Tarefas -->
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h2>Lista de Tarefas</h2>
+        </div>
+        
+        <div class="card-body">
+            @if (tarefas && tarefas.length > 0) {
+                <!-- Container Tarefas Pendentes -->
+                <div class="mb-5">
+                    <h3 class="mb-3">Tarefas Pendentes</h3>
+                    @if (getTarefasPorStatus(1).length > 0) {
+                        <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>Título</th>
                                         <th>Descrição</th>
-                                        <th>Conclusão</th>
+                                        <th>Data Prevista</th>
+                                        <th>Status</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (tarefa of getTarefasPorStatus(1); track tarefa.idTarefa) {
+                                    <tr>
+                                        <td>{{ tarefa.titulo }}</td>
+                                        <td>{{ tarefa.descricao }}</td>
+                                        <td>{{ tarefa.dataCriacao | date:'dd/MM/yyyy' }}</td>
+                                        <td>
+                                            <span class="badge bg-warning">
+                                                Pendente
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <button class="btn btn-sm btn-outline-success" 
+                                                        (click)="editarTarefa(tarefa)">
+                                                    <i class="bi bi-check-circle"></i> Editar Tarefa
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger" 
+                                                        (click)="removerTarefa(tarefa.idTarefa)">
+                                                    <i class="bi bi-trash"></i> Remover
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    } @else {
+                        <div class="alert alert-info">
+                          Nenhuma tarefa cadastrada. Adicione uma nova tarefa acima.
+                        </div>
+                    }
+                </div>
+    
+                <!-- Container Tarefas Concluídas -->
+                <div class="mb-3">
+                    <h3 class="mb-3">Tarefas Concluídas</h3>
+                    
+                    @if (getTarefasPorStatus(2).length > 0) {
+                        <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Título</th>
+                                        <th>Descrição</th>
+                                        <th>Data Prevista</th>
+                                        <th>Data de Conclusão</th>
+                                        <th>Status</th>
                                         <th>Ações</th>
                                     </tr>
                                 </thead>
@@ -73,12 +181,18 @@
                                     <tr>
                                         <td>{{ tarefa.titulo }}</td>
                                         <td>{{ tarefa.descricao }}</td>
+                                        <td>{{ tarefa.dataCriacao | date:'dd/MM/yyyy' }}</td>
                                         <td>{{ tarefa.dataConclusao | date:'dd/MM/yyyy' }}</td>
+                                        <td>
+                                            <span class="badge bg-success">
+                                                Concluída
+                                            </span>
+                                        </td>
                                         <td>
                                             <div class="btn-group" role="group">    
                                                 <button class="btn btn-sm btn-outline-success" 
                                                 (click)="editarTarefa(tarefa)">
-                                                    <i class="bi bi-check-circle"></i> Editar
+                                                    <i class="bi bi-check-circle"></i> Editar Tarefa
                                                 </button>
                                                 <button class="btn btn-sm btn-outline-danger" 
                                                         (click)="removerTarefa(tarefa.idTarefa)">
@@ -97,58 +211,11 @@
                         </div>
                     }
                 </div>
-            </div>
-
-            <!-- Tarefas Pendentes -->
-            <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h2>Tarefas Pendentes</h2>
-                    <button class="btn btn-sm btn-outline-primary" (click)="carregarTarefas()">
-                        <i class="bi bi-arrow-clockwise"></i> Atualizar
-                    </button>
+            } @else {
+                <div class="alert alert-info">
+                    Nenhuma tarefa cadastrada. Adicione uma nova tarefa acima.
                 </div>
-                <div class="card-body">
-                    @if (tarefas && getTarefasPorStatus(1).length > 0) {
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Título</th>
-                                        <th>Descrição</th>
-                                        <th>Data Prevista</th>
-                                        <th>Ações</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @for (tarefa of getTarefasPorStatus(1); track tarefa.idTarefa) {
-                                    <tr>
-                                        <td>{{ tarefa.titulo }}</td>
-                                        <td>{{ tarefa.descricao }}</td>
-                                        <td>{{ tarefa.dataCriacao | date:'dd/MM/yyyy' }}</td>
-                                        <td>
-                                            <div class="btn-group" role="group">
-                                                <button class="btn btn-sm btn-outline-success" 
-                                                        (click)="editarTarefa(tarefa)">
-                                                    <i class="bi bi-check-circle"></i> Editar
-                                                </button>
-                                                <button class="btn btn-sm btn-outline-danger" 
-                                                        (click)="removerTarefa(tarefa.idTarefa)">
-                                                    <i class="bi bi-trash"></i> Remover
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    } @else {
-                        <div class="alert alert-info">
-                            Nenhuma tarefa pendente.
-                        </div>
-                    }
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>

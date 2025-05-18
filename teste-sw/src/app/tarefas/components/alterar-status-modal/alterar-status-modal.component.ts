@@ -35,7 +35,7 @@ export class AlterarStatusModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.tarefa = this.data.tarefa;
-    this.selectedStatus = this.tarefa.idStatus; // Define o status atual como selecionado
+    this.selectedStatus = this.tarefa.idStatus;
     this.getStatusTarefa();
     
     console.log('ID Tarefa:', this.tarefa.idTarefa);
@@ -58,7 +58,7 @@ export class AlterarStatusModalComponent implements OnInit {
       const result = {
         idTarefa: this.tarefa.idTarefa,
         idStatus: this.selectedStatus,
-        idUsuario: this.tarefa.idUsuario // Incluindo o idUsuario no retorno
+        idUsuario: this.tarefa.idUsuario 
       };
 
       this.tarefasService.editarStatusTarefa(result).subscribe({
@@ -68,41 +68,18 @@ export class AlterarStatusModalComponent implements OnInit {
         },
         error: (error) => {
           console.error('Erro ao atualizar status:', error);
-          // Aqui você pode adicionar um tratamento de erro, como mostrar uma mensagem ao usuário
+         
         }
       });
     }
     else {
-      console.error('Nenhum status selecionado');
-      // Aqui você pode adicionar um tratamento de erro, como mostrar uma mensagem ao usuário
-      // ou desabilitar o botão de envio até que um status seja selecionado
-      // Por exemplo:
-      // this.snackBar.open('Por favor, selecione um status.', 'Fechar', { duration: 3000 });
-      // Ou apenas fechar o modal sem enviar nada
-      // this.dialogRef.close();
-      // Ou você pode retornar um objeto vazio ou nulo, dependendo do que você precisa
+
       const result = {
         idTarefa: this.tarefa.idTarefa,
         idStatus: null,
         observacao: this.observacao,
-        idUsuario: this.tarefa.idUsuario // Incluindo o idUsuario no retorno
+        idUsuario: this.tarefa.idUsuario 
       };
-      //this.tarefasService.editarStatusTarefa(result).subscribe();
-      console.log('Status não selecionado, retornando resultado vazio:', result);
-      // Aqui você pode adicionar um tratamento de erro, como mostrar uma mensagem ao usuário
-      // ou desabilitar o botão de envio até que um status seja selecionado
-      // Por exemplo:
-      // this.snackBar.open('Por favor, selecione um status.', 'Fechar', { duration: 3000 });
-      // Ou apenas fechar o modal sem enviar nada
-      // this.dialogRef.close();
-      // Ou você pode retornar um objeto vazio ou nulo, dependendo do que você precisa
-      //this.tarefasService.editarStatusTarefa(result).subscribe();
-      //this.tarefasService.editarStatusTarefa(result).subscribe();
-      console.log('Status não selecionado, retornando resultado vazio:', result);
-      // Aqui você pode adicionar um tratamento de erro, como mostrar uma mensagem ao usuário
-      // ou desabilitar o botão de envio até que um status seja selecionado
-
-
       
       this.dialogRef.close(result);
     }

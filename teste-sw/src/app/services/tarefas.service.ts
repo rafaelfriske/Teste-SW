@@ -53,6 +53,14 @@ export class TarefasService {
     return this.http.put(`${this.apiUrl}/TbTarefas/alterarStatus/${result.idTarefa}`, body);
 }
 
+removerTarefa(id: number): Observable<any> {
+  const body = {
+    IdStatus: 0,
+    IdTarefa: id,
+};
+  return this.http.put(`${this.apiUrl}/TbTarefas/removerTarefa/${id}`, body);
+}
+
   updateTask(task: Task): Observable<Task> {
     return this.http.put<Task>(`${this.apiUrl}/${task.id}`, task);
   }

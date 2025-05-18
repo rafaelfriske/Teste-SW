@@ -1,18 +1,235 @@
 :root {
-  --primary-gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
-  --primary-light: #818cf8;
-  --secondary-gradient: linear-gradient(135deg, #f43f5e, #ec4899);
-  --success-gradient: linear-gradient(135deg, #10b981, #14b8a6);
-  --warning-gradient: linear-gradient(135deg, #f59e0b, #f97316);
-  --glass-effect: rgba(255, 255, 255, 0.2);
-  --glass-border: rgba(255, 255, 255, 0.3);
-  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --secondary-color: #f43f5e;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --glass-effect: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .modern-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+
+  header {
+    display: flex;
+    width: 100%;
+  }
+
+  
+
+  .container-fluid {
+    margin-left: 247px;
+    margin-right: 247px;
 }
+
+
+  header h1 {
+    flex: 1;
+    text-align: left;
+  }
+
+  .btn-sair {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-left: auto;
+  }
+  
+  .btn-sair:hover {
+    background-color: #c82333;
+  }
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 1.8rem;
+    
+    &.floating {
+      .floating-label {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color: #6c757d;
+        transition: all 0.2s ease;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .form-control {
+        padding: 1.8rem 1rem 1rem 2.5rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        
+        &:focus {
+          border-color: #4361ee;
+          box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+          background-color: white;
+          outline: none;
+        }
+        
+        &:focus + .floating-label,
+        &:not(:placeholder-shown) + .floating-label {
+          top: 0.5rem;
+          left: 0.8rem;
+          font-size: 0.75rem;
+          color: #4361ee;
+        }
+      }
+      
+      textarea.form-control {
+        min-height: 120px;
+        resize: vertical;
+      }
+    }
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+  }
+  
+  .btn-tech {
+    position: relative;
+    padding: 0.8rem 2rem;
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    &:hover:not(:disabled) {
+      background-color: #3a56d4;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+    }
+    
+    &:active:not(:disabled) {
+      transform: translateY(0);
+    }
+    
+    &-hover {
+      position: absolute;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.6s ease, opacity 0.6s ease;
+      pointer-events: none;
+      opacity: 0;
+    }
+    
+    &:hover &-hover {
+      transform: scale(2);
+      opacity: 1;
+    }
+    
+    &.btn-disabled {
+      background-color: #adb5bd;
+      cursor: not-allowed;
+    }
+  }
+  
+  /* Efeito de onda no clique */
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+    .spinner-border {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  
+  /* Para o spinner na listagem */
+  .text-center.py-5 {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .modern-form {
+      padding: 1rem;
+    }
+    
+    .form-actions {
+      justify-content: center;
+    }
+    
+    .btn-tech {
+      width: 100%;
+      justify-content: center;
+    }
+  }
   .header-container {
     position: relative;
     width: 100%;
     margin-bottom: 1.5rem;
+}
+.btn-logout {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  
+  &:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+  }
+  
+  i {
+    margin-right: 5px;
+  }
 }
 .logout-btn {
     position: absolute;
@@ -42,17 +259,7 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 576px) {
-    .logout-btn {
-        padding: 6px 12px;
-        font-size: 0.9rem;
-    }
-    
-    .header-container h1 {
-        font-size: 1.8rem;
-        padding-right: 80px; /* Espaço para o botão */
-    }
-}
+
   
   body {
     background: 
@@ -110,7 +317,9 @@
   h2 {
     font-size: 1.5rem;
     color: var(--dark-color);
+      margin-left: 43px;
   }
+  
   
   h3 {
     font-size: 1.25rem;
@@ -285,9 +494,37 @@
   }
   
   .table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #adb5bd #f8f9fa;
+    
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: #f8f9fa;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: #adb5bd;
+      border-radius: 10px;
+    }
   }
+  
+  /* Estilo para os controles de paginação */
+  .pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  
   
   .btn-group {
     display: flex;
@@ -304,7 +541,7 @@
   }
   
   .justify-content-between {
-    justify-content: space-between;
+    justify-content: center;
   }
   
   .justify-content-end {
