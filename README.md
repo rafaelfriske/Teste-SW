@@ -69,7 +69,6 @@ Este projeto demonstra **funcionalidades reais do meu dia a dia**, incluindo:
 -> Considerações finais
 
 - 🕒 **Desenvolvimento:** 2 dias (Sábado/Domingo)
-Este projeto demonstra algumas funcionalidades do meu dia a dia, como o uso de modais que carregam dados da tela de tarefas para edição, por exemplo. Para o design, utilizei uma IA disponível (DeepSeek).
 
 Fico à disposição para dúvidas ou uma conversa. Obrigado pela oportunidade!
 
