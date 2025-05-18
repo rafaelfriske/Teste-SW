@@ -74,6 +74,3 @@ Este projeto demonstra algumas funcionalidades do meu dia a dia, como o uso de m
 Fico à disposição para dúvidas ou uma conversa. Obrigado pela oportunidade!
 
 Se precisar de mais alguma ajuda ou quiser que eu revise algum trecho específico, estou aqui!
-
-
-![screepshot](image.png)
