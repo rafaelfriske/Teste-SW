@@ -24,6 +24,17 @@ bash
 ng serve
 👉 Acesse: http://localhost:4200
 
+## 🔍 **Configuração Prévia (IMPORTANTE)**
+
+Antes de fazer login, verifique a URL da API no arquivo:  
+`src/environments/environment.ts`  
+
+📌 **No meu caso específico:**  
+```typescript
+export const environment = {
+  apiUrl: 'https://localhost:44307/api' // IIS Express padrão
+};
+
 
 -> Como rodar o projeto
 Clone o repositório.
