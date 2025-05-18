@@ -51,8 +51,13 @@ export const environment = {
 🔒 *Aviso: Estas são credenciais temporárias para testes*
 .
 
-✨ Funcionalidades Principais
-<table> <tr> <td width="30%"> <h4>📝 Adicionar Tarefa</h4> <ul> <li>Preencha todos os campos:</li> <ul> <li><code>Título</code></li> <li><code>Descrição</code></li> <li><code>Data Prevista</code></li> </ul> <li>A tabela de <b>Tarefas Pendentes</b> atualiza automaticamente</li> </ul> </td> <td width="30%"> <h4>🔄 Alterar Status</h4> <ol> <li>Clique em <kbd>Editar Tarefa</kbd></li> <li>No modal, altere para <b>"Concluído"</b></li> <li>Salve</li> </ol> <small>↩️ O mesmo processo reverte para "Pendente"</small> </td> <td width="30%"> <h4>🗑️ Remoção</h4> <p>O botão <span style="color:red"><b>Remover</b></span>:</p> <ul> <li>Remove apenas do front-end</li> <li>Mantém no banco para relatórios</li> </ul> </td> </tr> </table>
+## ✨ Funcionalidades
+
+| 🔧 Ação          | 📋 Detalhes                                                                 |
+|------------------|----------------------------------------------------------------------------|
+| **Adicionar**    | Preencha título, descrição e data → Atualização automática na tabela       |
+| **Editar**       | Altere status no modal (Pendente/Concluído) → Salve as alterações          |
+| **Remover**      | Exclusão apenas visual (dados permanecem no BD para relatórios)   
 
 -> Você será redirecionado para a tela de tarefas.
 Para adicionar uma nova tarefa, preencha todos os campos: Título, Descrição e Data Prevista. A tabela de "tarefas pendentes" será atualizada automaticamente.
