@@ -12,14 +12,14 @@ Projeto para teste na empresa SW Campinas
 ## 🚀 **Como Executar o Projeto**
 
 ### 1. **Clone o repositório**
-```bash
+
 git clone https://github.com/rafaelfriske/Teste-SW.git
 cd Teste-SW
 
-2. 📦 Instale as dependências
+### 2. 📦 Instale as dependências
 bash
 npm install
-3. ⚡ Inicie o servidor de desenvolvimento
+### 3. ⚡ Inicie o servidor de desenvolvimento
 bash
 ng serve
 👉 Acesse: http://localhost:4200
