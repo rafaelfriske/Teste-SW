@@ -6,8 +6,8 @@ Projeto para teste na empresa SW Campinas
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" /> <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" /> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" /> <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="Sass" />
 
 # 📋 Pré-requisitos
-# Node.js ≥ v18
-# Angular CLI (npm install -g @angular/cli)
+ Node.js ≥ v18,
+ Angular CLI (npm install -g @angular/cli)
 
 -> Como rodar o projeto
 Clone o repositório.
