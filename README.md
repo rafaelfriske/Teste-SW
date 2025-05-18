@@ -37,17 +37,18 @@ export const environment = {
 
 🔗 Documentação da API: Link aqui https://github.com/rafaelfriske/api-sw/blob/main/README.md
 
-## 🔐 **Como Usar (Login de Teste)**
+## 🔐 Como Usar (Login de Teste)
 
-<div align="center">
-  <img src="https://img.shields.io/badge/ACESSO-DEMO-2EA44F?style=for-the-badge&logo=testing-library&logoColor=white" alt="Acesso Demo">
-</div>
+### 📝 Credenciais de Teste
+**E-mail:** `teste@teste.com`  
+**Senha:** `123456`
 
-### 🧪 **Credenciais de Teste**
-```yaml
-📧 E-mail: teste@teste.com
-🔒 Senha: 123456
+### 🚀 Passos para Login
+1. Acesse a página de login em `http://localhost:4200/login`
+2. Insira as credenciais acima
+3. Clique no botão **"Entrar"**
 
+🔒 *Aviso: Estas são credenciais temporárias para testes*
 .
 -> Você será redirecionado para a tela de tarefas.
 Para adicionar uma nova tarefa, preencha todos os campos: Título, Descrição e Data Prevista. A tabela de "tarefas pendentes" será atualizada automaticamente.
