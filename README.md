@@ -59,11 +59,21 @@ export const environment = {
 | **Editar**       | Altere status no modal (Pendente/Concluído) → Salve as alterações          |
 | **Remover**      | Exclusão apenas visual (dados permanecem no BD para relatórios)   
 
-🏆 Considerações Finais
-<div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #6f42c1;"> <h3>💡 Sobre o Projeto</h3> <p>Este projeto demonstra <b>funcionalidades reais do meu dia a dia</b>, incluindo:</p> <ul> <li>Modais inteligentes que carregam dados dinâmicos</li> <li>Atualização em tempo real das tabelas</li> <li>Design assistido por IA (DeepSeek)</li> </ul> <p>⏱️ <b>Tempo de desenvolvimento:</b> Final de semana intenso (Sábado e Domingo)</p> <div align="center"> <img src="https://img.shields.io/badge/DISPONÍVEL_PARA_CONVERSA-2EA44F?style=for-the-badge" alt="Disponível"> </div> </div>
+## 🏆 Considerações Finais
 
+### 💡 Sobre o Projeto
+Este projeto demonstra **funcionalidades reais do meu dia a dia**, incluindo:
+- 🪄 Modais inteligentes que carregam dados dinâmicos
+- 🔄 Atualização em tempo real das tabelas
+- 🎨 Utilizei a IA (DeepSeek) para fazer um design mais moderno
 -> Considerações finais
+
+- 🕒 **Desenvolvimento:** 2 dias (Sábado/Domingo)
 Este projeto demonstra algumas funcionalidades do meu dia a dia, como o uso de modais que carregam dados da tela de tarefas para edição, por exemplo. Para o design, utilizei uma IA disponível (DeepSeek).
-O projeto foi desenvolvido no sábado e parte do domingo. Fico à disposição para dúvidas ou uma conversa. Obrigado pela oportunidade!
+
+Fico à disposição para dúvidas ou uma conversa. Obrigado pela oportunidade!
 
 Se precisar de mais alguma ajuda ou quiser que eu revise algum trecho específico, estou aqui!
+
+
+![screepshot](image.png)
