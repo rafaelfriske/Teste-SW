@@ -9,6 +9,21 @@ Projeto para teste na empresa SW Campinas
  Node.js ≥ v18,
  Angular CLI (npm install -g @angular/cli)
 
+## 🚀 **Como Executar o Projeto**
+
+### 1. **Clone o repositório**
+```bash
+git clone https://github.com/rafaelfriske/Teste-SW.git
+cd Teste-SW
+
+### 2. **📦 Instale as dependências**
+```bash
+npm install
+### 3. **⚡ Inicie o servidor de desenvolvimento**
+```bash
+ng serve
+
+
 -> Como rodar o projeto
 Clone o repositório.
 Abra o terminal na pasta do projeto.
