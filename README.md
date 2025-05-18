@@ -35,6 +35,10 @@ export const environment = {
   apiUrl: 'https://localhost:44307/api' // IIS Express padrão
 };
 
+🔗 Documentação da API: Link aqui https://github.com/rafaelfriske/api-sw/blob/main/README.md
+
+
+
 
 -> Como rodar o projeto
 Clone o repositório.
