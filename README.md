@@ -59,11 +59,8 @@ export const environment = {
 | **Editar**       | Altere status no modal (Pendente/Concluído) → Salve as alterações          |
 | **Remover**      | Exclusão apenas visual (dados permanecem no BD para relatórios)   
 
--> Você será redirecionado para a tela de tarefas.
-Para adicionar uma nova tarefa, preencha todos os campos: Título, Descrição e Data Prevista. A tabela de "tarefas pendentes" será atualizada automaticamente.
-Para alterar o status de pendente para concluído, clique em "Editar Tarefa", abra o modal, altere para "Concluído" e salve. A tabela de tarefas concluídas será atualizada automaticamente.
-Para reverter uma tarefa concluída para pendente, siga o mesmo procedimento.
-O botão "Remover" irá remover a tarefa do front-end, mas ela continuará no banco de dados para fins de relatórios.
+🏆 Considerações Finais
+<div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #6f42c1;"> <h3>💡 Sobre o Projeto</h3> <p>Este projeto demonstra <b>funcionalidades reais do meu dia a dia</b>, incluindo:</p> <ul> <li>Modais inteligentes que carregam dados dinâmicos</li> <li>Atualização em tempo real das tabelas</li> <li>Design assistido por IA (DeepSeek)</li> </ul> <p>⏱️ <b>Tempo de desenvolvimento:</b> Final de semana intenso (Sábado e Domingo)</p> <div align="center"> <img src="https://img.shields.io/badge/DISPONÍVEL_PARA_CONVERSA-2EA44F?style=for-the-badge" alt="Disponível"> </div> </div>
 
 -> Considerações finais
 Este projeto demonstra algumas funcionalidades do meu dia a dia, como o uso de modais que carregam dados da tela de tarefas para edição, por exemplo. Para o design, utilizei uma IA disponível (DeepSeek).
