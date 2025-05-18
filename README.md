@@ -1,7 +1,11 @@
 # Teste-SW
 Projeto para teste na empresa SW Campinas
 
--> Requisitos
+🛠️ Tecnologias e Linguagens
+<div style="display: flex; gap: 10px; align-items: center;">
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" /> <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" /> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" /> <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="Sass" />
+
+#Requisitos
 Node.js versão 18.19.0 ou superior
 Angular 19
 npm
