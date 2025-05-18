@@ -37,29 +37,17 @@ export const environment = {
 
 🔗 Documentação da API: Link aqui https://github.com/rafaelfriske/api-sw/blob/main/README.md
 
+## 🔐 **Como Usar (Login de Teste)**
 
+<div align="center">
+  <img src="https://img.shields.io/badge/ACESSO-DEMO-2EA44F?style=for-the-badge&logo=testing-library&logoColor=white" alt="Acesso Demo">
+</div>
 
+### 🧪 **Credenciais de Teste**
+```yaml
+📧 E-mail: teste@teste.com
+🔒 Senha: 123456
 
--> Como rodar o projeto
-Clone o repositório.
-Abra o terminal na pasta do projeto.
-Execute o comando para instalar as dependências:
-npm install
-Após a instalação, inicie o projeto:
-npm start
-Antes de fazer login, verifique a URL da API no arquivo
-environments.ts
-localizado na pasta
-environments
-. No meu caso, a API está rodando na porta 44307 pelo IIS Express.
-
--> Certifique-se de que a API está rodando e conectada ao front-end. A tela de login só funcionará se a API estiver ativa.
-
--> Como usar
-Faça login com o usuário de teste:
-teste@teste.com
-e senha:
-123456
 .
 -> Você será redirecionado para a tela de tarefas.
 Para adicionar uma nova tarefa, preencha todos os campos: Título, Descrição e Data Prevista. A tabela de "tarefas pendentes" será atualizada automaticamente.
