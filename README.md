@@ -29,8 +29,8 @@ ng serve
 Antes de fazer login, verifique a URL da API no arquivo:  
 `src/environments/environment.ts`  
 
-###  📌 **No meu caso específico:**  
-```typescript
+###  📌 No meu caso específico:
+
 export const environment = {
   apiUrl: 'https://localhost:44307/api' // IIS Express padrão
 };
