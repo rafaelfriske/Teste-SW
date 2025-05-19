@@ -66,7 +66,7 @@ Todas as funcionalidades que utilizei para desenvolver o projeto (como pegar o v
 Para desenvolver o front tive ajuda da IA DeepSeek.
 
 
-## Considerações finais
+### Desenvolvimento
 
 ### 🕒 **Desenvolvimento:** 2 dias (Sábado/Domingo)
 
