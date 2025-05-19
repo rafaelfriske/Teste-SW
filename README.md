@@ -47,7 +47,7 @@ Senha: `123456`
 1. Acesse a página de login em `http://localhost:4200/login`
 2. Insira as credenciais acima
 3. Clique no botão **"Entrar"**
-.
+
 
 ## ✨ Funcionalidades
 
