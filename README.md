@@ -24,12 +24,12 @@ bash
 ng serve
 👉 Acesse: http://localhost:4200
 
-## 🔍 **Configuração Prévia (IMPORTANTE)**
+##  🔍 **Configuração Prévia (IMPORTANTE)**
 
 Antes de fazer login, verifique a URL da API no arquivo:  
 `src/environments/environment.ts`  
 
-📌 **No meu caso específico:**  
+###  📌 **No meu caso específico:**  
 ```typescript
 export const environment = {
   apiUrl: 'https://localhost:44307/api' // IIS Express padrão
@@ -37,39 +37,39 @@ export const environment = {
 
 🔗 Documentação da API: Link aqui https://github.com/rafaelfriske/api-sw/blob/main/README.md
 
-## 🔐 Como Usar (Login de Teste)
+##  🔐 Como Usar (Login de Teste)
 
-### 📝 Credenciais de Teste
-**E-mail:** `teste@teste.com`  
-**Senha:** `123456`
+## 📝 Credenciais de Teste
+E-mail: `teste@teste.com`  
+Senha: `123456`
 
-### 🚀 Passos para Login
+## 🚀 Passos para Login
 1. Acesse a página de login em `http://localhost:4200/login`
 2. Insira as credenciais acima
 3. Clique no botão **"Entrar"**
-
-🔒 *Aviso: Estas são credenciais temporárias para testes*
 .
 
 ## ✨ Funcionalidades
 
-| 🔧 Ação          | 📋 Detalhes                                                                 |
-|------------------|----------------------------------------------------------------------------|
-| **Adicionar**    | Preencha título, descrição e data → Atualização automática na tabela       |
-| **Editar**       | Altere status no modal (Pendente/Concluído) → Salve as alterações          |
-| **Remover**      | Exclusão apenas visual (dados permanecem no BD para relatórios)   
+Adicionar:	Preencha título, descrição e data; a tabela atualiza automaticamente
+
+Editar: Altere o status (Pendente/Concluído) no modal e salve as mudanças
+
+Remover: Remoção visual (os dados permanecem no banco para relatórios)
+
 
 ## 🏆 Considerações Finais
 
 ### 💡 Sobre o Projeto
-Este projeto demonstra **funcionalidades reais do meu dia a dia**, incluindo:
-- 🪄 Modais inteligentes que carregam dados dinâmicos
-- 🔄 Atualização em tempo real das tabelas
-- 🎨 Utilizei a IA (DeepSeek) para fazer um design mais moderno
--> Considerações finais
+Todas as funcionalidades que utilizei para desenvolver o projeto (como pegar o valor do status pelo data e utiliza-lo no modal), são funcionalidades que já utilizo no meu dia a dia. Como também a atualização em tempo real após cada interatividade na tela.
 
-- 🕒 **Desenvolvimento:** 2 dias (Sábado/Domingo)
+Para desenvolver o front tive ajuda da IA DeepSeek.
+
+
+## Considerações finais
+
+### 🕒 **Desenvolvimento:** 2 dias (Sábado/Domingo)
 
 Fico à disposição para dúvidas ou uma conversa. Obrigado pela oportunidade!
 
-Se precisar de mais alguma ajuda ou quiser que eu revise algum trecho específico, estou aqui!
+Se precisar de mais alguma ajuda ou quiser que eu revise algum trecho específico, fico à disposição!
