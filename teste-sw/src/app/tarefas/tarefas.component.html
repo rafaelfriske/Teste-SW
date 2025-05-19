@@ -34,13 +34,13 @@
               <!-- Campo Título -->
               <div class="form-group floating">
                 <input 
-                  type="text" 
-                  id="titulo" 
-                  formControlName="title" 
-                  class="form-control" 
-                  placeholder=" "
-                  required
-                >
+                type="text" 
+                id="titulo" 
+                formControlName="title" 
+                class="form-control larger-input" 
+                placeholder=" " 
+                required
+              >
                 <label for="titulo" class="floating-label">
                   <i class="bi bi-card-heading"></i> Título*
                 </label>
@@ -54,12 +54,12 @@
               <!-- Campo Descrição -->
               <div class="form-group floating">
                 <textarea 
-                  id="descricao" 
-                  formControlName="description" 
-                  class="form-control" 
-                  placeholder=" "
-                  rows="3"
-                ></textarea>
+                id="descricao" 
+                formControlName="description" 
+                class="form-control larger-input" 
+                placeholder=" " 
+                rows="3"
+              ></textarea>
                 <label for="descricao" class="floating-label">
                   <i class="bi bi-text-paragraph"></i> Descrição
                 </label>
@@ -71,12 +71,12 @@
                   type="date" 
                   id="dataConclusao" 
                   formControlName="dueDate" 
-                  class="form-control" 
+                  class="form-control larger-input" 
                   placeholder=" "
                   required
                 >
                 <label for="dataConclusao" class="floating-label">
-                  <i class="bi bi-calendar-check"></i> Data de Conclusão*
+                  <i class="bi bi-calendar-check"></i> Data Prevista Para Conclusão
                 </label>
                 @if (taskForm.get('dueDate')?.invalid && (taskForm.get('dueDate')?.dirty || taskForm.get('dueDate')?.touched)) {
                   <div class="error-message">

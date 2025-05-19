@@ -13,6 +13,16 @@
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
+  .larger-input {
+    width: 85%; /* ocupa toda a largura do container */
+    max-width: 600px; /* limite máximo para evitar que fique muito largo */
+    padding: 10px; /* um pouco mais de espaço interno */
+    font-size: 1.1em; /* fonte maior para melhor visualização */
+    border-radius: 8px; /* cantos arredondados para um visual mais suave */
+    border: 1px solid #ccc; /* borda sutil */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* sombra suave */
+  }
+
   .modern-form {
     max-width: 600px;
     margin: 0 auto;
