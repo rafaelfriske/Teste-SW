@@ -72,5 +72,12 @@ Fico à disposição para dúvidas ou uma conversa. Obrigado pela oportunidade!
 
 Se precisar de mais alguma ajuda ou quiser que eu revise algum trecho específico, fico à disposição!
 
+## 📷 Screenshots
+
 ![image](https://github.com/user-attachments/assets/93d27925-737a-4fb3-ba4e-9287d0cd548c)
+
+![image](https://github.com/user-attachments/assets/f26a2d4c-51c2-4921-9236-89236b7a35f7)
+![image](https://github.com/user-attachments/assets/0c124406-18b2-43b0-81be-e7661c02ad70)
+
+
 
